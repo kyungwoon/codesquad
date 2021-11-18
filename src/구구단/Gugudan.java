@@ -1,4 +1,5 @@
-package ±¸±¸´Ü;
+package êµ¬êµ¬ë‹¨;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
