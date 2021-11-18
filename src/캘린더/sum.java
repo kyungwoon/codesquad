@@ -13,6 +13,8 @@ public class sum {
 		int num1 = sc.nextInt();
 		int num2 = sc.nextInt();
 		
-		System.out.println("두 수의 합은 " + (num1 + num2) + "입니다.");
+//		System.out.println("두 수의 합은 " + (num1 + num2) + "입니다.");
+		System.out.printf("두 수의 합은 %d입니다.",num1+num2);
+		sc.close();
 	}
 }
