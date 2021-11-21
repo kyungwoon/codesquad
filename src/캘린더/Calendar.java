@@ -59,7 +59,7 @@ public class Calendar {
 
 	private int getweek(int year, int month, int day) {
 		int syear = 1970;
-		final int standardWeek = 3; // 1970 / Jan / 1st = Thursday
+		final int standardWeek = 4; // 1970 / Jan / 1st = Thursday
 
 		int count = 0;
 
