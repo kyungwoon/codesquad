@@ -57,8 +57,8 @@ public class Prompt {
 
 			System.out.println("명령 (1, 2, 3, h, q)");
 			String cmd = sc.next();
-			
-			switch(cmd) {
+
+			switch (cmd) {
 			case "1":
 				cmdRegister(sc, cal);
 				break;
@@ -76,8 +76,6 @@ public class Prompt {
 				break;
 
 			}
-			System.out.println("Have a nice day!");
-			sc.close();
 		}
 	}
 
@@ -106,14 +104,14 @@ public class Prompt {
 		System.out.println("일정 검색");
 		System.out.println("날짜를 입력해주세요 (yyyy-mm-dd)");
 		String date = sc.next();
-		String plan = "";
-		try {
-			plan = c.searchPlan(date);
-		} catch (ParseException e) {
-			e.printStackTrace();
-			System.err.println("일정 검색 중 오류가 발생했습니다.");
+		PlanItem plan;
+		plan = c.searchPlan(date);
+
+		if (plan != null) {
+			System.out.println(plan.detail);
+		} else {
+			System.out.println("일정이 없습니다.");
 		}
-		System.out.println(plan);
 
 	}
 
@@ -130,6 +128,7 @@ public class Prompt {
 				break;
 			}
 		}
+		
 		c.registerPlan(date, text);
 
 	}
