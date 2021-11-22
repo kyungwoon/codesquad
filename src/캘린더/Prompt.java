@@ -22,22 +22,25 @@ public class Prompt {
 	 */
 
 	public int weekDay(String week) {
-		if (week.equals("su")) {
+		switch (week) {
+
+		case "su":
 			return 0;
-		} else if (week.equals("mo")) {
+		case "mo":
 			return 1;
-		} else if (week.equals("tu")) {
+		case "tu":
 			return 2;
-		} else if (week.equals("we")) {
+		case "we":
 			return 3;
-		} else if (week.equals("th")) {
+		case "th":
 			return 4;
-		} else if (week.equals("fr")) {
+		case "fr":
 			return 5;
-		} else if (week.equals("sa")) {
+		case "sa":
 			return 6;
-		} else {
+		default:
 			return 0;
+
 		}
 	}
 
@@ -49,23 +52,32 @@ public class Prompt {
 		Scanner sc = new Scanner(System.in);
 		Calendar cal = new Calendar();
 
-		while (true) {
+		boolean isLoop = true;
+		while (isLoop) {
 
 			System.out.println("명령 (1, 2, 3, h, q)");
 			String cmd = sc.next();
-			if (cmd.equals("1")) {
+			
+			switch(cmd) {
+			case "1":
 				cmdRegister(sc, cal);
-			} else if (cmd.equals("2")) {
-				cmdSearch(sc, cal);
-			} else if (cmd.equals("3")) {
-				cmdCal(sc, cal);
-			} else if (cmd.equals("h")) {
-				printMenu();
-			} else if (cmd.equals("q")) {
-				System.out.println("Have a nice day!");
 				break;
-			}
+			case "2":
+				cmdSearch(sc, cal);
+				break;
+			case "3":
+				cmdCal(sc, cal);
+				break;
+			case "h":
+				printMenu();
+				break;
+			case "q":
+				isLoop = false;
+				break;
 
+			}
+			System.out.println("Have a nice day!");
+			sc.close();
 		}
 	}
 
@@ -114,7 +126,7 @@ public class Prompt {
 		while (true) {
 			String word = sc.next();
 			text += word + " ";
-			if(word.endsWith(";")) {
+			if (word.endsWith(";")) {
 				break;
 			}
 		}
