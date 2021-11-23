@@ -73,6 +73,7 @@ public class Prompt {
 				break;
 			case "q":
 				isLoop = false;
+				System.out.println("Bye~");
 				break;
 
 			}

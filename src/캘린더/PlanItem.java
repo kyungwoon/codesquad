@@ -10,6 +10,7 @@ public class PlanItem {
 	public String detail;
 	public String peoples = ""; 
 	
+	
 	public static Date getDatefromString(String strDate) {
 		Date date = null;
 		try {
@@ -31,6 +32,12 @@ public class PlanItem {
 	}
 	public void addPeople(String name) {
 		peoples += name + ",";
+	}
+
+	public String saveString() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
+		String sdate = formatter.format(planDate);
+		return sdate + "," + detail + "\n";
 	}
 
 }
